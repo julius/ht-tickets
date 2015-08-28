@@ -1,0 +1,19 @@
+<head>
+    <title>#tickets</title>
+</head>
+<body>
+</body>
+
+<template name="Layout">
+    <div class="container">
+        <div class="row topBar">
+            <div class="col-xs-4">
+                <a href="/" class="logo">#tickets</a>
+            </div>
+            <div class="col-xs-8 profile">
+                {{> loginButtons}}
+            </div>
+        </div>
+        {{> yield}}
+    </div>
+</template>

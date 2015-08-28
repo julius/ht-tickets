@@ -1,0 +1,55 @@
+/* CSS declarations go here */
+.projects {
+    margin-top: 40px;
+}
+.projects .project {
+    margin: 10px 0;
+    padding: 10px 10px 20px 10px;
+    border: solid 1px #AAA;
+    border-radius: 4px;
+}
+.projects .project .projectActions {
+    padding-top: 14px;
+    text-align: right;
+}
+
+.tickets {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.ticketUpdates {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.topBar {
+    background: #333;
+    color: white;
+    padding: 10px 5px;
+    line-height: 40px;
+}
+
+.topBar a.logo {
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}
+
+.topBar .profile {
+    text-align: right;
+    padding-top: 4px;
+}
+.topBar .profile #login-buttons {
+    text-align: left;
+}
+
+.topBar .profile #login-buttons a.login-link-text {
+    color: white;
+}
+
+.topBar .profile #login-dropdown-list {
+    left: auto;
+    right: -1px;
+}

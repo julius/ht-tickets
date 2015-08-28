@@ -1,0 +1,69 @@
+<template name="Ticket">
+    <h1><a href="/projects">Projects</a> / <a href="/project/{{project._id}}">{{project.title}}</a> / #{{ticket.ticketId}} {{ticket.title}}</h1>
+
+    <div class="ticketBaseInfo">
+        <!-- TODO -->
+    </div>
+
+    <div class="ticketUpdates">
+        {{#each ticket.updates}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">{{userName userId}}</div>
+            </div>
+            <div class="panel-body">
+                <ul class="changes">
+                    {{#each changes}}
+                    <li><b>{{field}}</b> was changed from <b>{{oldValue}}</b> to <b>{{newValue}}</b></li>
+                    {{/each}}
+                </ul>
+                <p class="message">
+                    {{#markdown}}
+{{text}}
+                    {{/markdown}}
+                </p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">Update Ticket</div>
+        </div>
+        <div class="panel-body">
+            <form id="ticketUpdateAdd">
+                <input type="hidden" name="ticketId" value="{{ticket._id}}" />
+                <div class="form-group">
+                    <label for="ticketUpdateAdd-status">Status</label>
+                    <select name="status" id="ticketUpdateAdd-status" class="form-control">
+                        <option value="open" {{selectedIf ticket.status 'open'}}>Open</option>
+                        <option value="closed" {{selectedIf ticket.status 'closed'}}>Closed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ticketUpdateAdd-priority">Priority</label>
+                    <select name="priority" id="ticketUpdateAdd-priority" class="form-control">
+                        <option value="Low" {{selectedIf ticket.priority 'Low'}}>Low</option>
+                        <option value="Normal" {{selectedIf ticket.priority 'Normal'}}>Normal</option>
+                        <option value="High" {{selectedIf ticket.priority 'High'}}>High</option>
+                        <option value="Very High" {{selectedIf ticket.priority 'Very High'}}>Very High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ticketUpdateAdd-text">Text</label>
+                    <textarea name="text" id="ticketUpdateAdd-text" placeholder="Text (use Markdown)" class="form-control"></textarea>
+                    <br/>
+                    <div class="previewText">
+                        {{#markdown}}
+{{updatePreviewText}}
+                        {{/markdown}}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default">Update Ticket</button>
+            </form>
+        </div>
+    </div>
+
+
+</template>

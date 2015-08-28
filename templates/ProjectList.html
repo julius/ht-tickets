@@ -1,0 +1,33 @@
+<template name="ProjectList">
+
+    <h1>Projects</h1>
+
+    <div class="projects">
+        {{#each projects}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">{{title}}</div>
+            </div>
+            <div class="panel-body">
+                <a href="/project/{{_id}}" class="btn btn-primary">Open Tickets</a>
+            </div>
+        </div>
+        {{/each}}
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">Create new project</div>
+            </div>
+            <div class="panel-body">
+                <form id="projectAdd">
+                    <div class="form-group">
+                        <input type="text" name="projectName" placeholder="Project Name" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-default">Create New Project</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</template>
+

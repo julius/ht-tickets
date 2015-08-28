@@ -1,0 +1,57 @@
+<template name="Project">
+    <h1><a href="/projects">Projects</a> / {{project.title}}</h1>
+
+    <table class="table table-striped tickets">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ticket</th>
+                <th>Status</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tickets}}
+            <tr class="{{cssClassForPriority priority}}">
+                <td><a href="/ticket/{{ticketId}}">#{{ticketId}}</a></td>
+                <td><a href="/ticket/{{ticketId}}">{{title}}</a></td>
+                <td>{{status}}</td>
+                <td>{{priority}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">Create New Ticket</div>
+        </div>
+        <div class="panel-body">
+            <form id="ticketAdd">
+                <input type="hidden" name="projectId" value="{{project._id}}" />
+                <div class="form-group">
+                    <label for="ticketAdd-title">Title</label>
+                    <input type="text" name="title" id="ticketAdd-title" placeholder="Ticket title" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="ticketAdd-status">Status</label>
+                    <select name="status" id="ticketAdd-status" class="form-control">
+                        <option value="open">Open</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ticketAdd-priority">Priority</label>
+                    <select name="priority" id="ticketAdd-priority" class="form-control">
+                        <option value="Low">Low</option>
+                        <option value="Normal" selected="selected">Normal</option>
+                        <option value="High">High</option>
+                        <option value="Very High">Very High</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Create New Ticket</button>
+            </form>
+        </div>
+    </div>
+
+</template>
