@@ -7,11 +7,13 @@
 meteor-platform
 autopublish
 insecure
-stevezhu:lodash
 twbs:bootstrap
 fortawesome:fontawesome
-iron:router
-accounts-ui
+accounts-base
 accounts-password
 markdown
 fongandrew:find-and-modify
+meteorhacks:npm
+cosmos:browserify
+react
+npm-container

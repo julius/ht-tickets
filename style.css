@@ -41,15 +41,7 @@
     text-align: right;
     padding-top: 4px;
 }
-.topBar .profile #login-buttons {
-    text-align: left;
-}
-
-.topBar .profile #login-buttons a.login-link-text {
+.topBar .profile a,
+.topBar .profile a:hover {
     color: white;
-}
-
-.topBar .profile #login-dropdown-list {
-    left: auto;
-    right: -1px;
 }
